@@ -3,6 +3,9 @@ const cors = require("cors");
 const db = require("./db");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const path = require("path");
+
+const frontendPath = path.join(__dirname, "..");
 
 // Secret is stored securely in Render
 const JWT_SECRET = process.env.JWT_SECRET;
@@ -15,6 +18,8 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+// Serve the frontend files
+app.use(express.static(frontendPath));
 
 
 // ========================================
@@ -58,7 +63,7 @@ function authenticateToken(req, res, next) {
 // ========================================
 
 app.get("/", function (req, res) {
-    res.send("My backend is working!");
+    res.sendFile(path.join(frontendPath, "index.html"));
 });
 
 
