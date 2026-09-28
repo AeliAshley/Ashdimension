@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Tasks</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Top area -->
+        <div class="top-bar">
+            <p id="welcomeMessage"></p>
+            <button id="logoutButton">Logout</button>
+        </div>
+
+        <!-- Title -->
+        <div class="title-area">
+            <h1>My Tasks</h1>
+            <p>What do you need to do?</p>
+        </div>
+
+        <!-- Add a new task -->
+        <div class="input-area">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter a task..."
+                autocomplete="off"
+            >
+
+            <input
+                type="date"
+                id="dueDateInput"
+            >
+
+            <button id="addButton">
+                Add Task
+            </button>
+
+        </div>
+
+        <!-- Task statistics -->
+        <div class="task-stats">
+
+            <div class="stat">
+                <span id="totalTasks">0</span>
+                <small>Total</small>
+            </div>
+
+            <div class="stat">
+                <span id="remainingTasks">0</span>
+                <small>Remaining</small>
+            </div>
+
+            <div class="stat">
+                <span id="completedTasks">0</span>
+                <small>Completed</small>
+            </div>
+
+        </div>
+
+        <!-- Filters -->
+        <div class="filters">
+
+            <button class="filter-button active" data-filter="all">
+                All
+            </button>
+
+            <button class="filter-button" data-filter="active">
+                Active
+            </button>
+
+            <button class="filter-button" data-filter="completed">
+                Completed
+            </button>
+
+        </div>
+
+        <!-- Empty message -->
+        <div id="emptyState" class="empty-state">
+            <div class="empty-icon">✓</div>
+            <h3>No tasks here</h3>
+            <p>Add a task above to get started.</p>
+        </div>
+
+        <!-- Tasks -->
+        <ul id="taskList"></ul>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
