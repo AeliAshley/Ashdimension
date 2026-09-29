@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api/register";
+const API_URL = "https://ashdimension-1.onrender.com/api/register";
 
 const registerForm = document.getElementById("registerForm");
 const message = document.getElementById("message");
